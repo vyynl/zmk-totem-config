@@ -168,6 +168,42 @@
             key-positions = <22 24>;
             layers = <0>;
         };
+
+        spreadsheet_del_col {
+            bindings = <&spreadsheet_del_col>;
+            key-positions = <15 26>;
+            layers = <0>;
+        };
+
+        spreadsheet_del_row {
+            bindings = <&spreadsheet_del_row>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+
+        spreadsheet_ins_col {
+            bindings = <&spreadsheet_ins_col>;
+            key-positions = <16 27>;
+            layers = <0>;
+        };
+
+        spreadsheet_ins_row {
+            bindings = <&spreadsheet_ins_row>;
+            key-positions = <27 28>;
+            layers = <0>;
+        };
+
+        spreadsheet_hide_col {
+            bindings = <&kp LC(NUMBER_0)>;
+            key-positions = <17 28>;
+            layers = <0>;
+        };
+
+        spreadsheet_hide_row {
+            bindings = <&kp LC(N9)>;
+            key-positions = <28 29>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -222,6 +258,62 @@
             bindings = <&macro_tap>, <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
 
             label = "BRACE_BLOCK";
+        };
+
+        spreadsheet_del_col: spreadsheet_del_col {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp SPACE &kp MINUS>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "SPREADSHEET_DEL_COL";
+        };
+
+        spreadsheet_del_row: spreadsheet_del_row {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp SPACE &kp MINUS>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "SPREADSHEET_DEL_ROW";
+        };
+
+        spreadsheet_ins_col: spreadsheet_ins_col {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp SPACE &kp PLUS>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "SPREADSHEET_INS_COL";
+        };
+
+        spreadsheet_ins_row: spreadsheet_ins_row {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp SPACE &kp PLUS>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "SPREADSHEET_INS_ROW";
         };
     };
 
