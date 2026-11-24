@@ -143,18 +143,22 @@
             bindings = <&kp LC(C)>;
             key-positions = <10 11>;
             layers = <0>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
         };
 
         base_paste {
-            bindings = <&kp LC(P)>;
+            bindings = <&kp LC(V)>;
             key-positions = <0 11>;
             layers = <0>;
+            require-prior-idle-ms = <100>;
         };
 
         base_cut {
             bindings = <&kp LC(X)>;
             key-positions = <11 21>;
             layers = <0>;
+            require-prior-idle-ms = <100>;
         };
 
         base_undo {
